@@ -7,7 +7,7 @@ import os
 Notice_Url = os.environ["Notice_Url"]
 login_credits = os.environ["credits"]
 course_id=os.environ["course_id"]
-print(login_credits)
+print("a"+course_id+"x")
 def send_vote(event_id,topic_id):
     url = "https://www.mosoteach.cn/web/index.php?c=interaction_vote&m=save_answer"
 
