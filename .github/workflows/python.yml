@@ -28,6 +28,8 @@ jobs:
           Notice_Url: ${{ secrets.NOTICE_URL }}
           credits: ${{ secrets.CREDITS }}
           course_id: ${{ secrets.COURSE_ID }}
+          account: ${{ secrets.ACCOUNT }}
+          password:  ${{ secrets.PASSWORD }} 
       run: |
         pip install requests
         python lanmo.py
