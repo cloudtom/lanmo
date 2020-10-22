@@ -29,5 +29,6 @@ jobs:
           credits: ${{ secrets.credits }}
           course_id: ${{ secrets.course_id }}
       run: |
+        pip install requests
         python lanmo.py
 
