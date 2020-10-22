@@ -25,9 +25,9 @@ jobs:
         python-version: 3.8
     - name: Check New Event
       env:
-          Notice_Url: ${{ secrets.Notice_Url }}
-          credits: ${{ secrets.credits }}
-          course_id: ${{ secrets.course_id }}
+          Notice_Url: ${{ secrets.NOTICE_URL }}
+          credits: ${{ secrets.CREDITS }}
+          course_id: ${{ secrets.COURSE_ID }}
       run: |
         pip install requests
         python lanmo.py
