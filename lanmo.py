@@ -60,6 +60,7 @@ headers = {
 response = requests.request("POST", url, headers=headers, data = payload, files = files)
 
 login_response=json.loads(response.text)
+print(response.text)
 #print(login_response["user"]["app_token"])
 login_token=login_response["user"]["app_token"]
 has_new_event=-1
