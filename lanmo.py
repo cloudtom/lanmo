@@ -6,6 +6,8 @@ import re
 import os
 Notice_Url = os.environ["Notice_Url"]
 login_credits = os.environ["credits"]
+account=os.environ["account"]
+pwd=os.environ["password"]
 course_id=os.environ["course_id"]
 print("a"+course_id+"x")
 def send_vote(event_id,topic_id):
@@ -50,7 +52,9 @@ def get_vote(url):
     #print(response.text)
 url = "https://www.mosoteach.cn/web/index.php?c=passport&m=account_login"
 
-payload = login_credits
+payload = {'account_name': account,
+'user_pwd': pwd,
+'remember_me': 'Y'}
 files = [
 
 ]
