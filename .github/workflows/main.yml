@@ -1,0 +1,33 @@
+name: Python application
+
+on:
+  push:
+    branches: [ main ]
+  schedule:
+    - cron: '40 1 * * 4'
+  watch:
+    types: [started]
+      
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.8
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8
+    - name: Check New Event
+      env:
+          Notice_Url: ${{ secrets.NOTICE_URL }}
+          credits: ${{ secrets.CREDITS }}
+          course_id: ${{ secrets.COURSE_ID }}
+          account: ${{ secrets.ACCOUNT }}
+          password:  ${{ secrets.PASSWORD }} 
+      run: |
+        pip install requests
+        python lanmo.py
+
