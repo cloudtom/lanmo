@@ -102,7 +102,7 @@ for matchNum, match in enumerate(matches, start=1):
     detail=detail+match.group()+" "
     print ("Match {matchNum} was found at {start}-{end}: {match}".format(matchNum = matchNum, start = match.start(), end = match.end(), match = match.group()))
 print(detail)
-response = requests.request("GET", Notice_Url+"老师在蓝墨云班课发布了新的活动，请及时完成！活动名称："+detail)
+responsewx = requests.request("GET", Notice_Url+"老师在蓝墨云班课发布了新的活动，请及时完成！活动名称："+detail)
 
 regex = (r"(?<=data-row-status=\"IN_PRGRS\"\n"
 	r"                                                data-id=\").*?(?=\">)")
